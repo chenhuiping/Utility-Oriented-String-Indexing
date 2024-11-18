@@ -1,0 +1,44 @@
+CFG_FILE := ../path.cfg
+SDSL_LIB_DIR := $(shell grep '^SDSL_LIB_DIR =' $(CFG_FILE) | cut -d'=' -f2)
+
+CC=     g++
+CFLAGS= -D_USE_64 -fopenmp -msse3 -Ofast -fomit-frame-pointer -funroll-loops -march=native -std=c++17 -O3 -DNDEBUG
+INCLUDE= -I../include -I${SDSL_LIB_DIR}/include
+LIBS= -L${SDSL_LIB_DIR}/lib -lsdsl -ldivsufsort -ldivsufsort64
+
+SRC_DIR= src
+INCLUDE_DIR= ../include
+BUILD_DIR= ../build
+BIN_DIR= bin
+NAME= bsl1
+EXE= $(BIN_DIR)/${NAME}
+
+INCLUDE_FILES= utils.cc krfp.cc useful_methods.cpp
+SRC= $(SRC_DIR)/${NAME}.cc $(addprefix $(INCLUDE_DIR)/, $(INCLUDE_FILES))
+OBJ= $(patsubst %.cc,$(BUILD_DIR)/%.o,$(notdir $(SRC:.cpp=.cc)))
+
+all: $(EXE)
+
+$(BIN_DIR):
+	mkdir -p $(BIN_DIR)
+
+$(BUILD_DIR):
+	mkdir -p $(BUILD_DIR)
+
+$(EXE): $(OBJ) | $(BIN_DIR)
+	$(CC) $(CFLAGS) -o $@ $(OBJ) $(LIBS)
+
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cc | $(BUILD_DIR)
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+
+$(BUILD_DIR)/%.o: $(INCLUDE_DIR)/%.cc | $(BUILD_DIR)
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+
+$(BUILD_DIR)/%.o: $(INCLUDE_DIR)/%.cpp | $(BUILD_DIR)
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+
+$(BUILD_DIR)/%.o: $(INCLUDE_DIR)/%.hpp | $(BUILD_DIR)
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+
+clean:
+	rm -rf $(BUILD_DIR) $(EXE) *~ 
