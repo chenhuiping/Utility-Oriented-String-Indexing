@@ -47,8 +47,8 @@ using namespace std;
 using namespace rklce;
 
 int main(int argc, char *argv[]) {
-    if (argc != 6) {
-        cout << "Usage: " << argv[0] << " text-file " << " weights-file " << " K " << " tau " << " patterns-file" << endl;
+    if (argc != 5) {
+        cout << "Usage: " << argv[0] << " text-file " << " weights-file " << " K " << " tau " << endl;
         return -1;
     }
 

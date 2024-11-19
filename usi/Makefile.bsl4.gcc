@@ -9,9 +9,8 @@ LIBS= -L${SDSL_LIB_DIR}/lib -lsdsl -ldivsufsort -ldivsufsort64
 SRC_DIR= src
 INCLUDE_DIR= ../include
 BUILD_DIR= ../build
-BIN_DIR= bin
 NAME= bsl4
-EXE= $(BIN_DIR)/${NAME}
+EXE= ${NAME}
 
 INCLUDE_FILES= utils.cc krfp.cc useful_methods.cpp
 SRC= $(SRC_DIR)/${NAME}.cc $(addprefix $(INCLUDE_DIR)/, $(INCLUDE_FILES))
@@ -19,13 +18,10 @@ OBJ= $(patsubst %.cc,$(BUILD_DIR)/%.o,$(notdir $(SRC:.cpp=.cc)))
 
 all: $(EXE)
 
-$(BIN_DIR):
-	mkdir -p $(BIN_DIR)
-
 $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
-$(EXE): $(OBJ) | $(BIN_DIR)
+$(EXE): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $(OBJ) $(LIBS)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cc | $(BUILD_DIR)

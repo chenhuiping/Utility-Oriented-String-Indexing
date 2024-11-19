@@ -38,8 +38,8 @@ using namespace sdsl;
 using namespace std;
 
 int main(int argc, char *argv[]) {
-    if (argc != 5) {
-        cout << "Usage: " << argv[0] << " text-file " << " weights-file " << " K " << " patterns-file" << endl;
+    if (argc != 4) {
+        cout << "Usage: " << argv[0] << " text-file " << " weights-file " << " K " << endl;
         return -1;
     }
 
