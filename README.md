@@ -1,10 +1,11 @@
 # Utility-Oriented-String-Indexing
-This repository contains the implementation of two experiments addressing the Utility-Oriented String Indexing (USI) problem. The USI problem focuses on preprocessing a string with numerical utilities into a compact data structure, enabling efficient computation of the global utility of query patterns based on their occurrences and associated utilities. This approach supports fast and scalable analysis of large datasets.
+This repository contains the source code of the paper titled "Utility-Oriented String Indexing". The main problem in the paper is the USI problem, which focuses on preprocessing a string with numerical utilities into a compact data structure, enabling efficient computation of the global utility of query patterns based on their occurrences and associated utilities. The data structure we propose requires also finding top-K frequent substrings from a long string.
 
-The two experiments included are:
+There is source code:
 
-1. Top-K Frequent Substring Mining: Algorithms to identify the K most frequent substrings in large datasets.
-2. USI Problem: Techniques to preprocess strings with utilities into efficient data structures for querying pattern utilities.
+1. Top-K Frequent Substring Mining: Algorithms ET, AT, TT, and SH.
+
+2. USI Problem: Data structures UET and UAT.
 
 # Requirements
 - A GNU/Linux system
