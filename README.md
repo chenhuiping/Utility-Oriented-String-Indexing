@@ -29,7 +29,7 @@ For example: `SDSL_LIB_DIR=/path/to/sdsl-lite`
 
 # How to run
 
-## Top-K Frequent Substring Mining
+## 1. Top-K Frequent Substring Mining
 ```bash
 cd topk
 ```
@@ -52,7 +52,7 @@ cd topk
 ```
 
 
-## USI Problem
+## 2. USI Problem
 ```bash
 cd ../usi
 ```
