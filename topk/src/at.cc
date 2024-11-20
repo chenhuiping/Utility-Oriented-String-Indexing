@@ -48,13 +48,12 @@ using namespace rklce;
 
 int main(int argc, char *argv[]) {
     if (argc != 5) {
-        cout << "Usage: " << argv[0] << " text-file " << " weights-file " << " K " << " tau " << endl;
+        cout << "Usage: " << argv[0] << " text-file " << " K " << " tau " << endl;
         return -1;
     }
 
-    string second_arg(argv[2]);
-    INT K = atoll(argv[3]);
-    INT interval = atoll(argv[4]);
+    INT K = atoll(argv[2]);
+    INT interval = atoll(argv[3]);
 
     ifstream seq(argv[1], ios::in | ios::binary);
     unsigned char *input_seq_char = NULL;
@@ -206,7 +205,6 @@ int main(int argc, char *argv[]) {
     rmq_succinct_sct<> rmq(&v);
     util::clear(v);
 
-    cout << "util_list.size " << util_list.size() << endl;
     unordered_map<string, INT> pattern_act_freq;
     vector<pair<string, INT>> pattern_freq_to_add(util_list.size());
 

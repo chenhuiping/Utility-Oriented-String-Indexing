@@ -107,9 +107,9 @@ int main(int argc, char *argv[]) {
             return -1;
         }
 
-        no_of_patterns = (INT)atoi(argv[6]);
-        pat_minlen = (INT)atoi(argv[7]);
-        pat_maxlen = (INT)atoi(argv[8]);
+        no_of_patterns = (INT)atoi(argv[5]);
+        pat_minlen = (INT)atoi(argv[6]);
+        pat_maxlen = (INT)atoi(argv[7]);
     }
 
     ifstream seq(argv[1], ios::in | ios::binary);
@@ -313,14 +313,13 @@ int main(int argc, char *argv[]) {
         random_pattern_generation(pat_minlen, pat_maxlen, no_of_patterns, all_patterns, n, sequence);
     } else {
         cout << "The patterns are read from file." << endl;
-        pattern_from_file(all_patterns, n, argv[6]);
+        pattern_from_file(all_patterns, n, argv[5]);
     }
 
     std::chrono::steady_clock::time_point pt_begin = std::chrono::steady_clock::now();
 
 #pragma omp parallel for
     for (auto &pattern : all_patterns) {
-        std::chrono::steady_clock::time_point pt_begin_each_query = std::chrono::steady_clock::now();
         INT m = pattern.size();
         INT fp = 0;
         for (INT i = 0; i < m; i++) fp = karp_rabin_hashing::concat(fp, pattern[i], 1);
@@ -340,15 +339,13 @@ int main(int argc, char *argv[]) {
                         U += PS[SA[interval.first + i] + m - 1] - PS[SA[interval.first + i] - 1];
                 }
             }
-            std::chrono::steady_clock::time_point pt_end_each_query = std::chrono::steady_clock::now();
-            int64_t each_query_time = std::chrono::duration_cast<std::chrono::nanoseconds>(pt_end_each_query - pt_begin_each_query).count();
         }
     }
 
     std::chrono::steady_clock::time_point pt_end = std::chrono::steady_clock::now();
     cout << "====Index size in MBytes: " << (double)global_space / 1000000 << endl;
-    cout << "Total pattern matching time: " << std::chrono::duration_cast<std::chrono::milliseconds>(pt_end - pt_begin).count() << "[ms]." << std::endl;
-    cout << "Avg pattern matching time: " << std::chrono::duration_cast<std::chrono::milliseconds>(pt_end - pt_begin).count() / (double)all_patterns.size() << "[ms]." << std::endl;
+    cout << "Total pattern matching time: " << std::chrono::duration_cast<std::chrono::nanoseconds>(pt_end - pt_begin).count() << "[ns]." << std::endl;
+    cout << "Avg pattern matching time: " << std::chrono::duration_cast<std::chrono::nanoseconds>(pt_end - pt_begin).count() / (double)all_patterns.size() << "[ns]." << std::endl;
 
     free(SA);
     free(LCP);

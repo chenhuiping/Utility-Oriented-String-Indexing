@@ -374,7 +374,7 @@ void write_freq_pattern_file(vector<Util_e> &utilities, string filename, INT *SA
     of.close();
 }
 
-unsigned int substrings_utility(INT *SA, unsigned char *sequence, vector<double> PS, B *b, INT bsize, ankerl::unordered_dense::map<INT, double> &H, string inputfile, INT K) {
+unsigned int substrings_utility(B *b, INT bsize, ankerl::unordered_dense::map<INT, double> &H) {
     vector<Util_e> utilities;
     for (INT i = 0; i < bsize; i++) {
         if (b[i].lcp == 0) continue;
@@ -393,7 +393,7 @@ unsigned int substrings_utility(INT *SA, unsigned char *sequence, vector<double>
         }
     }
 
-    free(b);
+    for (INT i = 0; i < utilities.size(); i++) H.insert({utilities[i].fp, utilities[i].util});
 
     return (1);
 }

@@ -42,7 +42,6 @@ using namespace sdsl;
 using namespace std;
 
 int64_t g_global_space = 0;
-size_t g_hash_num = 0;
 
 double get_utility(SpaceSavingSketch &SSS, unsigned char *sequence, INT *SA, INT *LCP, rmq_succinct_sct<> &rmq, INT n, vector<unsigned char> &pattern, vector<double> &PS) {
     INT fp = 0;
@@ -53,7 +52,6 @@ double get_utility(SpaceSavingSketch &SSS, unsigned char *sequence, INT *SA, INT
     double util;
     if (SSS.existsKey(fp)) {
         util = SSS.getUtility(fp);
-        g_hash_num++;
     } else {
         util = cal_utility(pattern, PS, sequence, SA, LCP, rmq, n);
     }
@@ -198,8 +196,6 @@ int main(int argc, char *argv[]) {
     cout << endl;
     std::chrono::steady_clock::time_point pt_end = std::chrono::steady_clock::now();
 
-    cout << "Number of query answer by hashtable = " << g_hash_num << ", not answer by table = " << pattern_num - g_hash_num << endl;
-    cout << "query by hash ratio = " << static_cast<double>(g_hash_num) / static_cast<double>(pattern_num) << endl;
     cout << "Index size in MBytes: " << (double)g_global_space / 1000000 << endl;
     cout << "Total pattern matching time: " << std::chrono::duration_cast<std::chrono::nanoseconds>(pt_end - pt_begin).count() << "[ns]" << std::endl;
     cout << "Avg pattern matching time: " << std::chrono::duration_cast<std::chrono::nanoseconds>(pt_end - pt_begin).count() / (double)pattern_num << "[ns]" << std::endl;

@@ -39,12 +39,11 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
     if (argc != 4) {
-        cout << "Usage: " << argv[0] << " text-file " << " weights-file " << " K " << endl;
+        cout << "Usage: " << argv[0] << " text-file " << " K " << endl;
         return -1;
     }
 
-    string second_arg(argv[2]);
-    INT K = atoll(argv[3]);
+    INT K = atoll(argv[2]);
 
     ifstream seq(argv[1], ios::in | ios::binary);
     unsigned char *input_seq_char = NULL;
@@ -121,19 +120,11 @@ int main(int argc, char *argv[]) {
     find_longest(b, n, K, tau, L, bsize, w);
     b = (B *)realloc(b, (bsize) * sizeof(B));
 
-    vector<double> PS;
-    if (second_arg.compare("random") == 0) {
-        cout << "Random weights generation.\n";
-        random_weight_generation(PS, n - 1);
-    } else {
-        cout << "The weights are read from file.\n";
-        weight_from_file(argv[2], PS, n - 1);
-    }
-
     std::chrono::steady_clock::time_point util_comp_begin = std::chrono::steady_clock::now();
 
     auto H = ankerl::unordered_dense::map<INT, double>();
-    substrings_utility(SA, sequence, PS, b, bsize, H, string(argv[1]), K);
+    substrings_utility(b, bsize, H);
+    free(b);
     cout << "The computed tau is " << tau << "." << endl;
     cout << "The longest frequent pattern is of length L = " << L << "." << endl;
     free(sequence);
