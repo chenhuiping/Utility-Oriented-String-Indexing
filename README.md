@@ -5,7 +5,7 @@ There is source code:
 
 1. Top-K Frequent Substring Mining: Algorithms ET, AT, TT, and SH.
 
-2. USI Problem: Data structures UET and UAT.
+2. USI Problem: Data structures UET, UAT, BSL1, BSL2, BSL3, and BSL4.
 
 # Requirements
 - A GNU/Linux system
