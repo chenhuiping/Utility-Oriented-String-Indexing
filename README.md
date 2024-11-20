@@ -35,14 +35,13 @@ cd topk
 ```
 ### Input parameters:
 - `<text_file>` : Input string file.
-- `<weight_file>` : Weight file for the string.
 - `<K>` : The number of top frequent substrings to find.
 - `<s>` : The number of partitions.
 
 ### Usage:
 ```bash
-./et <text_file> <weight_file> <K>
-./at <text_file> <weight_file> <K> <s>
+./et <text_file> <K>
+./at <text_file> <K> <s>
 ```
 
 ### Example commands:
