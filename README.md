@@ -33,50 +33,56 @@ For example: `SDSL_LIB_DIR=/path/to/sdsl-lite`
 ```bash
 cd topk
 ```
-Required Inputs:
+### Inputs parameters:
 - `<text_file>` : Input string file.
 - `<weight_file>` : Weight file for the string.
-- `K` : The number of top frequent substrings to find.
+- `<K>` : The number of top frequent substrings to find.
+- `<s>` : The number of partitions.
 
-### Example Command:
-
-1. Exact Top-K (ET):
+### Usage:
 ```bash
-./et ../data/string ../data/weight_string 3 
+./et <text_file> <weight_file> <K>
+./at <text_file> <weight_file> <K> <s>
 ```
-2. Approximate Top-K (AT) (with extra input):
-- `s` : The number of partitions.
+
+### Example commands:
 ```bash
+./et ../data/string ../data/weight_string 3
 ./at ../data/string ../data/weight_string 3 2
 ```
+
 
 ## USI Problem
 ```bash
 cd ../usi
 ```
-Required Inputs:
+### Inputs parameters:
 - `<text_file>` : Input string file.
 - `<weight_file>` : Weight file for the string.
-- `K` : The number of top frequent substrings to find.
+- `<K>` : The number of top frequent substrings to find.
+- `<s>` : The number of partitions.
 - `<pattern file>` : Query pattern file.
+
+  
+### Usage:
+```bash
+./uet <text_file> <weight_file> <K> <pattern file>
+./uat <text_file> <weight_file> <K> <s> <pattern file>
+./bsl1 <text_file> <weight_file> <pattern file>
+./bsl2 <text_file> <weight_file> <K> <pattern file>
+./bsl3 <text_file> <weight_file> <K> <pattern file>
+./bsl4 <text_file> <weight_file> <K> <pattern file>
+```
 
 ### Example Command:
 
-1. UET:
 ```bash
 ./uet ../data/string ../data/weight_string 3 ../data/pattern
-```
-2. UAT:
-- `s` : The number of partitions.
-```bash
 ./uat ../data/string ../data/weight_string 3 2 ../data/pattern
+./bsl1 ../data/string ../data/weight_string ../data/pattern
+./bsl2 ../data/string ../data/weight_string 3 ../data/pattern
+./bsl3 ../data/string ../data/weight_string 3 ../data/pattern
+./bsl4 ../data/string ../data/weight_string 3 ../data/pattern
 ```
-3. BSL1:
-```bash
-./bsl ../data/string ../data/weight_string ../data/pattern
-```
-3. BSL2_4:
-```bash
-./bsl_x ../data/string ../data/weight_string 3 ../data/pattern
-```
+
 
