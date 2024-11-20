@@ -33,7 +33,7 @@ For example: `SDSL_LIB_DIR=/path/to/sdsl-lite`
 ```bash
 cd topk
 ```
-### Inputs parameters:
+### Input parameters:
 - `<text_file>` : Input string file.
 - `<weight_file>` : Weight file for the string.
 - `<K>` : The number of top frequent substrings to find.
@@ -56,7 +56,7 @@ cd topk
 ```bash
 cd ../usi
 ```
-### Inputs parameters:
+### Input parameters:
 - `<text_file>` : Input string file.
 - `<weight_file>` : Weight file for the string.
 - `<K>` : The number of top frequent substrings to find.
@@ -74,7 +74,7 @@ cd ../usi
 ./bsl4 <text_file> <weight_file> <K> <pattern file>
 ```
 
-### Example Command:
+### Example Commands:
 
 ```bash
 ./uet ../data/string ../data/weight_string 3 ../data/pattern
