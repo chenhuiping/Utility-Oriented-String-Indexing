@@ -39,13 +39,13 @@ cd topk
 - `<K>` : The number of top frequent substrings to find.
 - `<s>` : The number of partitions.
 
-### Usage:
+### Usage for ET and AT:
 ```bash
 ./et <text_file> <K>
 ./at <text_file> <K> <s>
 ```
 
-### Example commands:
+### Example commands for ET and AT:
 ```bash
 ./et ../data/string ../data/weight_string 3
 ./at ../data/string ../data/weight_string 3 2
@@ -64,7 +64,7 @@ cd ../usi
 - `<pattern file>` : Query pattern file.
 
   
-### Usage:
+### Usage for UET, UAT, BSL1, BSL2, BSL3, and BSL4:
 ```bash
 ./uet <text_file> <weight_file> <K> <pattern file>
 ./uat <text_file> <weight_file> <K> <s> <pattern file>
@@ -74,7 +74,7 @@ cd ../usi
 ./bsl4 <text_file> <weight_file> <K> <pattern file>
 ```
 
-### Example Commands:
+### Example Commands UET, UAT, BSL1, BSL2, BSL3, and BSL4:
 
 ```bash
 ./uet ../data/string ../data/weight_string 3 ../data/pattern
