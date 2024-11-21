@@ -47,8 +47,8 @@ cd topk
 
 ### Example commands for ET and AT:
 ```bash
-./et ../data/string ../data/weight_string 3
-./at ../data/string ../data/weight_string 3 2
+./et ../data/example_string 3
+./at ../data/example_string 3 2
 ```
 ### TT algorithm:
 The TT algorithm, as implemented in the top-k-compress project focuses on identifying the top-k frequent patterns in data streams. For a comprehensive understanding of the TT algorithm's methodology and its applications, please refer to the [topk-k-compress](https://github.com/pdinklag/top-k-compress) GitHub Repository.
@@ -62,28 +62,28 @@ cd ../usi
 - `<weight_file>` : Weight file for the string.
 - `<K>` : The number of top frequent substrings to find.
 - `<s>` : The number of partitions.
-- `<pattern file>` : Query pattern file.
+- `<pattern_file>` : Query pattern file.
 
   
 ### Usage for UET, UAT, BSL1, BSL2, BSL3, and BSL4:
 ```bash
-./uet <text_file> <weight_file> <K> <pattern file>
-./uat <text_file> <weight_file> <K> <s> <pattern file>
-./bsl1 <text_file> <weight_file> <pattern file>
-./bsl2 <text_file> <weight_file> <K> <pattern file>
-./bsl3 <text_file> <weight_file> <K> <pattern file>
-./bsl4 <text_file> <weight_file> <K> <pattern file>
+./uet <text_file> <weight_file> <K> <pattern_file>
+./uat <text_file> <weight_file> <K> <s> <pattern_file>
+./bsl1 <text_file> <weight_file> <pattern_file>
+./bsl2 <text_file> <weight_file> <K> <pattern_file>
+./bsl3 <text_file> <weight_file> <K> <pattern_file>
+./bsl4 <text_file> <weight_file> <K> <pattern_file>
 ```
 
 ### Example Commands UET, UAT, BSL1, BSL2, BSL3, and BSL4:
 
 ```bash
-./uet ../data/string ../data/weight_string 3 ../data/pattern
-./uat ../data/string ../data/weight_string 3 2 ../data/pattern
-./bsl1 ../data/string ../data/weight_string ../data/pattern
-./bsl2 ../data/string ../data/weight_string 3 ../data/pattern
-./bsl3 ../data/string ../data/weight_string 3 ../data/pattern
-./bsl4 ../data/string ../data/weight_string 3 ../data/pattern
+./uet ../data/example_string ../data/example_weight 3 ../data/example_pattern
+./uat ../data/example_string ../data/example_weight 3 2 ../data/example_pattern
+./bsl1 ../data/example_string ../data/example_weight ../data/example_pattern
+./bsl2 ../data/example_string ../data/example_weight 3 ../data/example_pattern
+./bsl3 ../data/example_string ../data/example_weight 3 ../data/example_pattern
+./bsl4 ../data/example_string ../data/example_weight 3 ../data/example_pattern
 ```
 # Contact
 
