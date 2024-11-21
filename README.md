@@ -84,5 +84,9 @@ cd ../usi
 ./bsl3 ../data/string ../data/weight_string 3 ../data/pattern
 ./bsl4 ../data/string ../data/weight_string 3 ../data/pattern
 ```
+# Contact
+
+For questions or support, please contact:  
+Huiping Chen (<h.chen.13@bham.ac.uk>), Roberto Grossi (<roberto.grossi@unipi.it>), Veronica Guerrini (<veronica.guerrini@unipi.it>), and Solon P. Pissis (<solon.pissis@cwi.nl>).
 
 
