@@ -32,8 +32,8 @@ an
 The following real-world datasets are included or referenced:
 
 - `ADV`: Included in the folder as `ADV.txt`
-- `IOT` [Source](https://ieee-dataport.org/open-access/crawdad-unmblebeacon)
-- `XML` [Source](https://pizzachili.dcc.uchile.cl/texts.html)
-- `HUM` [Source](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.26/)
-- `ECOLI` [Source](https://www.ebi.ac.uk/ena/browser/view/ERR022075)
+- `IOT`: [Link](https://ieee-dataport.org/open-access/crawdad-unmblebeacon)
+- `XML`: [Link](https://pizzachili.dcc.uchile.cl/texts.html)
+- `HUM`: [Link](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.26/)
+- `ECOLI`: [Link](https://www.ebi.ac.uk/ena/browser/view/ERR022075)
 
