@@ -50,7 +50,8 @@ cd topk
 ./et ../data/string ../data/weight_string 3
 ./at ../data/string ../data/weight_string 3 2
 ```
-The **TT algorithm**, as implemented in the top-k-compress project focuses on identifying the top-k frequent patterns in data streams. For a comprehensive understanding of the TT algorithm's methodology and its applications, please refer to the [topk-k-compress](https://github.com/pdinklag/top-k-compress) GitHub Repository.
+### TT algorithm:
+The TT algorithm, as implemented in the top-k-compress project focuses on identifying the top-k frequent patterns in data streams. For a comprehensive understanding of the TT algorithm's methodology and its applications, please refer to the [topk-k-compress](https://github.com/pdinklag/top-k-compress) GitHub Repository.
 
 ## 2. USI Problem
 ```bash
