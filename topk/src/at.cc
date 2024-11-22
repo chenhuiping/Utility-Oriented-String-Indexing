@@ -208,7 +208,7 @@ int main(int argc, char *argv[]) {
     unordered_map<string, INT> pattern_act_freq;
     vector<pair<string, INT>> pattern_freq_to_add(util_list.size());
 
-#pragma omp parallel for
+
     for (INT i = 0; i < util_list.size(); i++) {
         INT start_pos = util_list[i]->start;
         INT ell = util_list[i]->ell;
