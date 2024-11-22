@@ -50,7 +50,6 @@ unsigned int calculate_utility(unsigned char *sequence, INT n, INT *SA, INT *LCP
                                INT K) {
     vector<tuple<INT, double>> H_insert(K);
 
-#pragma omp parallel for schedule(dynamic)
     for (INT i = 0; i < K; i++) {
         INT start_pos = util_list[i]->start;
         INT ell = util_list[i]->ell;
