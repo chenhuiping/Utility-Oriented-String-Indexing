@@ -27,13 +27,18 @@ n
 an
 ```
 
-# Real Datasets
+## Real Datasets
 
-The following real-world datasets are included or referenced:
+The following real-world datasets are included or referenced in this project:
 
-- `ADV`: Included in the folder as `ADV.txt`
-- `IOT`: [Link](https://ieee-dataport.org/open-access/crawdad-unmblebeacon)
-- `XML`: [Link](https://pizzachili.dcc.uchile.cl/texts.html)
-- `HUM`: [Link](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.26/)
-- `ECOLI`: [Link](https://www.ebi.ac.uk/ena/browser/view/ERR022075)
+- [**ADV**](https://raw.githubusercontent.com/UmerTariq1/CTR-and-Clicks-Prediction-Using-Text-and-Numerical-Data/master/Dataset.csv)  : Included in the folder as `ADV.txt`: Dataset for predicting click-through rates (CTR) using text and numerical data.
+
+- [**IOT**](https://ieee-dataport.org/open-access/crawdad-unmblebeacon): Captures signals from Internet of Things (IoT) devices.
+
+- [**XML**](https://pizzachili.dcc.uchile.cl/texts.html): XML data used for text compression and indexing benchmarks.
+
+- [**HUM**](https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.26/): Genomic data for human sequences.
+
+- [**ECOLI**](https://www.ebi.ac.uk/ena/browser/view/ERR022075): Genomic data for *Escherichia coli* sequences.
+
 
