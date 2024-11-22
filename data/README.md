@@ -14,7 +14,7 @@ banana
 
 Example:
 ```bash
-  1 3 4 3 4 1
+1 3 4 3 4 1
 ```
 **3. Query Pattern File `<pattern file>`:** lists query patterns (substrings) to be used for utility-based retrieval, each line represents a substring.
 
