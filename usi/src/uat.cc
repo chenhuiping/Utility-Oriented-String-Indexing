@@ -318,7 +318,7 @@ int main(int argc, char *argv[]) {
 
     std::chrono::steady_clock::time_point pt_begin = std::chrono::steady_clock::now();
 
-#pragma omp parallel for
+
     for (auto &pattern : all_patterns) {
         INT m = pattern.size();
         INT fp = 0;
