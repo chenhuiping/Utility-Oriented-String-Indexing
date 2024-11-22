@@ -427,7 +427,6 @@ unsigned int substrings_utility(INT *SA, unsigned char *sequence, vector<double>
     INT threads = omp_get_num_procs();
     cout << threads << " threads will handle " << utilities.size() << " substrings." << endl;
 
-#pragma omp parallel for schedule(dynamic)
     for (INT i = 0; i < utilities.size(); i++) {
         INT fp;
         INT start = SA[utilities[i].l];
