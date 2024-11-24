@@ -59,24 +59,24 @@ int main(int argc, char* argv[])
 	int64_t L = 1;
 	
 	ifstream seq(argv[1], ios::in | ios::binary);
-    unsigned char * input_seq_char = NULL;
+    	unsigned char * input_seq_char = NULL;
 	unsigned char * sequence;
 	INT n = 0;
-    char c;
-    while (seq.get(c))
-    {
-        if(n == 0 || n % ALLOC_SIZE)	input_seq_char = ( unsigned char * ) realloc ( input_seq_char,   ( n + ALLOC_SIZE ) * sizeof ( unsigned char ) );
-        input_seq_char[n] = c;
-        n++;
-    }
-    seq.close();
+    	char c;
+    	while (seq.get(c))
+    	{
+       		if(n == 0 || n % ALLOC_SIZE)	input_seq_char = ( unsigned char * ) realloc ( input_seq_char,   ( n + ALLOC_SIZE ) * sizeof ( unsigned char ) );
+        	input_seq_char[n] = c;
+       		n++;
+    	}
+    	seq.close();
 	
 	if( n == 0 || n % ALLOC_SIZE)    input_seq_char = ( unsigned char * ) realloc ( input_seq_char,   ( n + ALLOC_SIZE ) * sizeof ( unsigned char ) );
 	if( c == '\n')	input_seq_char[--n] = 255;	
 	else		input_seq_char[n] = 255;	
 	//Temporary
 	sequence = input_seq_char;
-    sequence[++n]='\0';
+    	sequence[++n]='\0';
 	
 	cout << "Text is of length n = " << n - 1 << "." << endl;
 	cout << "K = " << K << endl;
@@ -91,7 +91,7 @@ int main(int argc, char* argv[])
 
 	std::chrono::steady_clock::time_point  stream_end = std::chrono::steady_clock::now();
 	cout<<"Top-K computation time: "<< std::chrono::duration_cast<std::chrono::milliseconds>(stream_end - stream_begin).count() << "[ms]." << std::endl;	
-	output_top_k(sequence,topK, string(argv[1]) + "_stream_freq_K" + to_string(K));
+	output_top_k(sequence,topK, string(argv[1]) + "_sh_top_K" + to_string(K));
 	free (sequence);
 	return 0;
 }
