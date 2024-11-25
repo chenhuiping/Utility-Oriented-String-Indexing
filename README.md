@@ -39,16 +39,18 @@ cd topk
 - `<K>` : The number of top frequent substrings to find.
 - `<s>` : The number of partitions.
 
-### Usage for ET and AT:
+### Usage for ET, AT and SH:
 ```bash
 ./et <text_file> <K>
 ./at <text_file> <K> <s>
+./sh <text_file> <K>
 ```
 
 ### Example commands for ET and AT:
 ```bash
 ./et ../data/example_string 3
 ./at ../data/example_string 3 2
+./sh ../data/example_string 3 
 ```
 ### TT algorithm:
 The TT algorithm, as implemented in the top-k-compress project focuses on identifying the top-k frequent patterns in data streams. For a comprehensive understanding of the TT algorithm's methodology and its applications, please refer to the [topk-k-compress](https://github.com/pdinklag/top-k-compress) GitHub Repository.
