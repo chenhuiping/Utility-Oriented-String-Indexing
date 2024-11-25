@@ -46,7 +46,7 @@ cd topk
 ./sh <text_file> <K>
 ```
 
-### Example commands for ET and AT:
+### Example commands for ET, AT and SH:
 ```bash
 ./et ../data/example_string 3
 ./at ../data/example_string 3 2
