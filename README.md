@@ -17,7 +17,7 @@ cd sdsl-lite
 ./install.sh
 ```
 
-After installing SDSL-lite, Update the configuration file located at `path.cfg` to set the correct library path.
+After installing SDSL-lite, update the configuration file `path.cfg` (in the main directory Utility-Oriented-String-Indexing) to set the correct library path.
 
 For example: `SDSL_LIB_DIR=/path/to/sdsl-lite` 
 
